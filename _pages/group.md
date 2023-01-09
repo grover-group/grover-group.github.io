@@ -14,9 +14,10 @@ We work on foundational topics relating to machine learning under limited superv
 ## Ph.D.
 
 * Tung Nguyen
-* Hritik Bansal
-* Daniel Israel
+* Hritik Bansal (co-advised with Kai-Wei Chang)
 * Siyan Zhao
+* Daniel Israel (co-advised with Guy van den Broeck)
+
 
 ## Masters
 
