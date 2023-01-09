@@ -1,13 +1,16 @@
 ---
 layout: page
-title: submenus
+title: ML4Climate
 nav: true
-nav_order: 6
+nav_order: 5
 dropdown: true
 children: 
-    - title: publications
-      permalink: /publications/
+    - title: about
+      permalink: /ml4climate/about
     - title: divider
-    - title: projects
-      permalink: /projects/
+    - title: ClimateLearn
+      permalink: https://climatelearn.readthedocs.io/
+    # - title: divider
+    # - title: Outreach
+    #   permalink: /projects/
 ---
