@@ -77,4 +77,4 @@ Our roadmap for the future of ClimateLearn includes expanding support for **more
 
 Our aim in building ClimateLearn is to create a tool that can accelerate research at the intersection of machine learning and climate science, and we hope you are just as excited about it as we are.
 
-This blog post was written to accompany our [tutorial](https://www.climatechange.ai/papers/neurips2022/114) in the "Tackling Climate Change with Machine Learning" track at the Neural Information Processing Systems 2022 Conference. ClimateLearn is available on GitHub at this link: <https://github.com/aditya-grover/climate-learn>.
+*This blog post was written to accompany our [tutorial](https://www.climatechange.ai/papers/neurips2022/114) in the "Tackling Climate Change with Machine Learning" track at the Neural Information Processing Systems 2022 Conference. ClimateLearn is available on GitHub at this link: <https://github.com/aditya-grover/climate-learn>.*
