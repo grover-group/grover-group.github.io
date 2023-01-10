@@ -23,7 +23,7 @@ jobs:
         bundler-cache: true
     - name: Install deps
       run: |
-        npm install -g mermaid.cli
+         sudo apt install graphviz
     - name: Setup deploy options
       id: setup
       run: |
