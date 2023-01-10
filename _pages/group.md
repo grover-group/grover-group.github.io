@@ -24,10 +24,10 @@ We work on foundational topics relating to machine learning under limited superv
 * Satvik Mashkaria
 * Siddarth Krishnamoorthy
 * Meihua Dang
+* Jason Jewik
 
 ## Undergraduates
 
-* Jason Jewik
 * Baiting Zhu
 * Bryan Tang
 * Seongbin Park
