@@ -33,8 +33,14 @@ The method used by climate scientists to make short and long term predictions is
 <div class="row mt-3">
     {% include figure.html path="assets/img/forecasting.png" class="img-fluid rounded z-depth-1" %}
 </div>
+<div class="caption">
+    <strong>Climate Forecasting:</strong> Predicting future (right, t = 5 days) climate conditions from history (left, t = 0 days).
+</div>
 <div clas="row mt-3">
     {% include figure.html path="assets/img/downscaling.png" class="img-fluid rounded z-depth-1" %}
+</div>
+<div class="caption">
+    <strong>Climate Downscaling:</strong> Refining low resolution global climate model (left) to high resolution (right).
 </div>
 
 **Weather forecasting** is the problem of predicting climate variables into the future. For example, given daily surface temperature in Los Angeles, California over the past week, what will daily surface temperatures look like over the next week? Such questions are analogous to the problem of video frame prediction in computer vision. **Spatial downscaling** is the problem of refining spatially-coarse climate model predictions (*e.g.*, from a grid of 100 km $$\times$$ 100 km cells to a grid of 1 km $$\times$$ 1 km cells). This is similar to another computer vision problem called super resolution (SR), where the goal is to upsample low-resolution images. A key difference between forecasting/downscaling and frame-prediction/SR is that we can use additional signals to constrain the space of possible predictions. For instance, in video frame prediction, the machine learning model is given a sequence of images as input and produces a sequence of images as output. The input and output modalities are the same. In weather forecasting, the machine learning model can make use of exogenous variables in different modalities. Suppose that the model is predicting surface temperature. Future surface temperatures are not influenced only by past surface temperatures. Factors such as humidity and wind speed also play a role, and they can be provided as inputs to the model in addition to temperature.
