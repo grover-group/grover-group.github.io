@@ -14,7 +14,9 @@ authors:
 ---
 
 <div class="row mt-3">
-    {% include figure.html path="assets/img/mario-von-rotz-sgaA4_eyL3s-unsplash.jpg/" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/mario-von-rotz-sgaA4_eyL3s-unsplash.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
 <div class="caption">
     Photo by <a href="https://unsplash.com/@mario_vr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mario von Rotz</a> on
