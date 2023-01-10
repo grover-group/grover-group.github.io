@@ -11,17 +11,22 @@ authors:
     affiliations:
       name: UCLA
 
+toc:
+  - name: Background
+  - name: Datasets
+  - name: Models
+  - name: Metrics & Visualizations
+  - name: Conclusion
+
 ---
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/mario-von-rotz-sgaA4_eyL3s-unsplash.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
+<div class="l-body">
+  {% include figure.html path="assets/img/mario-von-rotz-sgaA4_eyL3s-unsplash.jpg" class="img-fluid rounded z-depth-1" %}
+  <div class="caption">
     Photo by <a href="https://unsplash.com/@mario_vr?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mario von Rotz</a> on
     <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
     Unsplash</a>.
+  </div>
 </div>
 
 ## Background
@@ -30,17 +35,17 @@ In recent years, extreme weather events have made more apparent the threat of cl
 
 The method used by climate scientists to make short and long term predictions is called **climate modeling**. In a nutshell, climate models are systems of differential equations that can be integrated over time to yield predictions about variables such as temperature, wind speed, and precipitation. These models are grounded in physics, their inner workings are easily interpretable, and simulating them yields reasonably accurate outputs. However, running the simulations is a computationally expensive process and it’s difficult to improve the models when given more data. This is where **machine learning algorithms** step in as a promising alternative. In particular, such algorithms have demonstrated competitiveness with traditional climate models in solving two sub-problems of climate modeling called "weather forecasting" and "spatial downscaling".
 
-<div class="row mt-3">
-    {% include figure.html path="assets/img/forecasting.png" class="img-fluid rounded z-depth-1" %}
+<div class="l-body">
+  {% include figure.html path="assets/img/forecasting.png" class="img-fluid rounded z-depth-1" %}
+  <div class="caption">
+    <strong>Climate Forecasting:</strong> Using historical data (left) to predict future climate conditions (right).
+  </div>
 </div>
-<div class="caption">
-    <strong>Climate Forecasting:</strong> Predicting future (right, t = 5 days) climate conditions from history (left, t = 0 days).
-</div>
-<div clas="row mt-3">
-    {% include figure.html path="assets/img/downscaling.png" class="img-fluid rounded z-depth-1" %}
-</div>
-<div class="caption">
+<div class="l-body">
+  {% include figure.html path="assets/img/downscaling.png" class="img-fluid rounded z-depth-1" %}
+  <div class="caption">
     <strong>Climate Downscaling:</strong> Refining low resolution global climate model (left) to high resolution (right).
+  </div>
 </div>
 
 **Weather forecasting** is the problem of predicting climate variables into the future. For example, given daily surface temperature in Los Angeles, California over the past week, what will daily surface temperatures look like over the next week? Such questions are analogous to the problem of video frame prediction in computer vision. **Spatial downscaling** is the problem of refining spatially-coarse climate model predictions (*e.g.*, from a grid of 100 km $$\times$$ 100 km cells to a grid of 1 km $$\times$$ 1 km cells). This is similar to another computer vision problem called super resolution (SR), where the goal is to upsample low-resolution images. A key difference between forecasting/downscaling and frame-prediction/SR is that we can use additional signals to constrain the space of possible predictions. For instance, in video frame prediction, the machine learning model is given a sequence of images as input and produces a sequence of images as output. The input and output modalities are the same. In weather forecasting, the machine learning model can make use of exogenous variables in different modalities. Suppose that the model is predicting surface temperature. Future surface temperatures are not influenced only by past surface temperatures. Factors such as humidity and wind speed also play a role, and they can be provided as inputs to the model in addition to temperature.
@@ -49,8 +54,21 @@ Thus, as deep learning research has exploded in recent years, machine learning a
 
 We believe that good research needs to be supported by good infrastructure. In that spirit, ClimateLearn is a Python package for accessing state-of-the-art climate data and machine learning models in a standardized, straightforward way.  In this package, we provide access to multiple datasets, a zoo of state-of-the-art baseline models, and a suite of metrics and visualizations for large-scale benchmarking of statistical downscaling and temporal forecasting methods.
 
-<div class="row mt-3">
-    {% include figure.html path="assets/img/climate-learn-features.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row justify-content-sm-center">
+  {% graphviz %}
+    digraph G {
+      ClimateLearn [shape=box,fixedsize=true,width=1.5,fontname="times-bold"];
+      Datasets [shape=box,fixedsize=true,width=1.2,height=0.8];
+      Models [shape=box,fixedsize=true,width=1.2,height=0.8];
+      "Metrics &\nVisualizations" [shape=box,fixedsize=true,width=1.2,height=0.8];
+      ClimateLearn -> Datasets;
+      ClimateLearn -> Models;
+      ClimateLearn -> "Metrics &\nVisualizations";
+    }
+  {% endgraphviz %}
+</div>
+<div class="caption">
+  ClimateLearn's features.
 </div>
 
 ## Datasets
@@ -67,8 +85,20 @@ The predictions of such models can be easily evaluated and visualized using Clim
 
 ## Conclusion
 
-<div class="row mt-3">
-    {% include figure.html path="assets/img/climate-learn-roadmap.jpg" class="img-fluid rounded z-depth-1" %}
+<div class="row justify-content-sm-center">
+  {% graphviz %}
+    digraph G {
+      rankdir="LR"
+      node1 [label="More\nDatasets",fixedsize=true,height=0.8,width=1.5]
+      node2 [label="Probabilistic\nForecasting",fixedsize=true,height=0.8,width=1.5]
+      node3 [label="Uncertainty\nQuantification",fixedsize=true,height=0.8,width=1.5]
+      node4 [label="Community\nContributions",fixedsize=true,height=0.8,width=1.5]
+      node1 -> node2 -> node3 -> node4;
+    }
+  {% endgraphviz %}
+</div>
+<div class="caption">
+  ClimateLearn's near-term roadmap.
 </div>
 
 Today we are launching ClimateLearn, a package that can bridge the gap between the climate science and machine learning communities through the provision of straightforward dataset access, baseline methods for easy comparison, and metrics and visualizations to understand model outputs.
@@ -76,5 +106,7 @@ Today we are launching ClimateLearn, a package that can bridge the gap between t
 Our roadmap for the future of ClimateLearn includes expanding support for **more datasets** such as CMIP6 (the sixth generation Climate Modeling Intercomparison Project), which was used in the Sixth Assessment Report by the IPCC (International Panel on Climate Change). We also plan to add support for **probabilistic forecasting** and **uncertainty quantification** with new metrics such as continuous ranked probability score and new machine learning algorithms such as Bayesian neural networks and diffusion models. Implementing such features would create additional value for ClimateLearn. Machine learning researchers can unlock insights into model performance, expressiveness, and robustness. Climate scientists can understand how changing the values of input variables will result in different output distributions, which matches how modern climate studies are done: scientists provide a range of potential outcomes based on hypothetical emissions scenarios. We will also be formalizing guidelines for feature/pull requests to our Github repository and look forward to community contributions.
 
 Our aim in building ClimateLearn is to create a tool that can accelerate research at the intersection of machine learning and climate science, and we hope you are just as excited about it as we are.
+
+***
 
 *This blog post was written to accompany our [tutorial](https://www.climatechange.ai/papers/neurips2022/114) in the "Tackling Climate Change with Machine Learning" track at the Neural Information Processing Systems 2022 Conference. ClimateLearn is available on GitHub at this link: <https://github.com/aditya-grover/climate-learn>.*
